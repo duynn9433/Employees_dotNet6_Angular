@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table" *ngIf="listEmployee">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Department</th>
+      <td> </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let e of listEmployee">
+      <td>{{ e.id }}</td>
+      <td>{{ e.name }}</td>
+      <td>{{ e.email }}</td>
+      <td>{{ e.phone }}</td>
+      <td>{{ e.salary }}</td>
+      <td>{{ e.department }}</td>
+      <td><a [routerLink]="['/employees','edit',e.id]">View</a> </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!listEmployee">No data</p>
+</div>
